@@ -1,0 +1,8 @@
+.menu > div{
+    cursor: pointer;
+}
+
+.menu > div:hover{
+    color: red;
+    scale: 1.9;
+}
