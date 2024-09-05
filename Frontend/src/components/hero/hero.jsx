@@ -40,7 +40,7 @@ const Hero = () => {
   }, []);
 
   return (
-    <div className="hero h-screen flex flex-col justify-center uppercase text-[160px] text-center border-b border-[#eee]">
+    <div className="hero h-screen flex flex-col justify-center uppercase text-[calc(10vw)] text-center">
       <h1 className="h1First">Welcome to</h1>
       <h1 className="h1Second">My Portfolio</h1>
     </div>

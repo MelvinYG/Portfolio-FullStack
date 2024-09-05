@@ -11,6 +11,54 @@
 }
 
 .menu > div:hover{
-    color: red;
+    color: #746d6d;
     scale: 1.9;
+}
+
+.menu-mobile{
+    display: none !important;
+}
+
+.menu-icon{
+    position: relative;
+}
+
+.side-menu{
+    position: absolute;
+    top:0;
+    right: -40vw;
+    width: 40vw;
+    height: 100vh;
+    background-color: #111;
+    display: flex;
+    flex-direction: column;
+    padding: 42px 10px;
+    transition: all 0.3s ease-in;
+    gap: 20px;
+    font-size: 22px;
+    align-items: center;
+}
+.side-menu>div{
+    transition: all 0.3s ease;
+}
+.side-menu>div:hover{
+    scale: 1.1;
+    color: #746d6d;
+}
+
+.side-menu.active{
+    right: 0;
+}
+
+.close-icon{
+    margin-left: 60%;
+}
+
+@media screen and (max-width: 767px) {
+    .menu{
+        display: none !important;
+    }
+    .menu-mobile{
+        display: block !important;
+    }
 }
