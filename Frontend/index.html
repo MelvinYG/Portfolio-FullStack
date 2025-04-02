@@ -8,6 +8,14 @@
   </head>
   <body>
     <div id="root"></div>
+    <div class="cursor"></div>
     <script type="module" src="/src/main.jsx"></script>
+    <script>
+      const cursor = document.querySelector('.cursor');
+      document.addEventListener('mousemove', (e)=>{
+        console.log(e);
+        cursor.setAttribute("style", "top: " + (e.pageY - 5) + "px; left: " + (e.pageX - 5) + "px;" );
+      });
+    </script>
   </body>
 </html>

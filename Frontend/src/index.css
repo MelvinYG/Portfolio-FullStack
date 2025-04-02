@@ -5,6 +5,16 @@
 
 
 body{
+    background-color: #111;
     color: #fff;
     font-family: 'Nunito Sans';
+    cursor: url('./assets/dot.png') , auto;
+}
+
+.cursor{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid #fff;
+    position: absolute;
 }

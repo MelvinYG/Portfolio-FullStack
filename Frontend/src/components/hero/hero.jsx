@@ -1,5 +1,7 @@
 import { useEffect } from "react";
 import gsap from "gsap";
+import String from "../string/string";
+
 
 const Hero = () => {
 
@@ -40,10 +42,13 @@ const Hero = () => {
   }, []);
 
   return (
-    <div className="hero h-screen flex flex-col justify-center uppercase text-[calc(10vw)] text-center">
+    <>
+    <div className="hero h-[calc(85vh)] flex flex-col justify-center uppercase text-[calc(10vw)] text-center">
       <h1 className="h1First">Welcome to</h1>
       <h1 className="h1Second">My Portfolio</h1>
     </div>
+    <String />
+    </>
   )
 };
 
