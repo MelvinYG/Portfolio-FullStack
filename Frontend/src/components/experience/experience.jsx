@@ -16,7 +16,9 @@ const Experience = () => {
 
   return (
     <div className="min-h-screen bg-[#111] text-white">
+      <div className="hidden md:block">
       <ExperienceTitle />
+      </div>
       <div className="flex flex-col justify-center items-center mt-20 gap-5">
         {experienceData.map((expData, index) => (
           <ExperienceCard key={index} data={expData} />

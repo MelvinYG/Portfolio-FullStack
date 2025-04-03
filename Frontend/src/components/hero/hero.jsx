@@ -4,7 +4,6 @@ import String from "../string/string";
 
 
 const Hero = () => {
-
   useEffect(() => {
     const h1First = document.querySelector('.h1First');
     const h1Second = document.querySelector('.h1Second');
@@ -43,11 +42,13 @@ const Hero = () => {
 
   return (
     <>
-    <div className="hero h-[calc(85vh)] flex flex-col justify-center uppercase text-[calc(10vw)] text-center">
+    <div className="hero h-[calc(100vh)] flex flex-col justify-center uppercase text-[calc(10vw)] text-center">
       <h1 className="h1First">Welcome to</h1>
       <h1 className="h1Second">My Portfolio</h1>
     </div>
-    <String />
+    <div className="hidden lg:block">
+      <String />
+    </div>
     </>
   )
 };

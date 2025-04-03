@@ -1,0 +1,10 @@
+.profile-pic{
+    @media screen and (min-width: 727px) {
+        img{
+            max-height: 50vh;
+        }
+    }
+    img{
+        max-height: 70vh  !important;
+    }
+}

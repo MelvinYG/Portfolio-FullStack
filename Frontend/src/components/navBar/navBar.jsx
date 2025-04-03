@@ -1,6 +1,6 @@
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import './navBar.css';
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
@@ -12,6 +12,17 @@ const NavBar = () => {
   const sideMenuRef = useRef(null);
   const audioRef = useRef(null);
   const [musicOff, setMusicOff] = useState(false);
+
+  useEffect(() => {
+    const playAudio = async () => {
+      try {
+        await audioRef.current.play(); // Attempt to play
+      } catch (error) {
+        console.log("Autoplay blocked, waiting for user interaction.");
+      }
+    };
+    playAudio();
+  }, []);
 
   const handleSideMenu = () => {
     if (sideMenuRef.current) {
