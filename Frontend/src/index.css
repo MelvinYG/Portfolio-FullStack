@@ -17,4 +17,15 @@ body{
     border-radius: 50%;
     border: 1px solid #fff;
     position: absolute;
+    transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+    animation: cursorAnim 0.5s infinite alternate;
+}
+
+@keyframes cursorAnim{
+    from{
+        transform: scale(1);
+    }
+    to{
+        transform: scale(0.7);
+    }
 }

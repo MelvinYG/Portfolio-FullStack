@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + React</title>
+    <title>Melvin's Portfolio</title>
   </head>
   <body>
     <div id="root"></div>
@@ -12,10 +12,11 @@
     <script type="module" src="/src/main.jsx"></script>
     <script>
       const cursor = document.querySelector('.cursor');
-      document.addEventListener('mousemove', (e)=>{
-        console.log(e);
+
+      window.addEventListener('mousemove', (e)=>{
         cursor.setAttribute("style", "top: " + (e.pageY - 5) + "px; left: " + (e.pageX - 5) + "px;" );
       });
+
     </script>
   </body>
 </html>
