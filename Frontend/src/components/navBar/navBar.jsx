@@ -79,7 +79,7 @@ const NavBar = () => {
             <div className="contact">Contact Me</div>
             <div className="musicBtns" onClick={handleMusic}>
               {musicOff ? <MusicOffIcon /> : <MusicNoteIcon />}
-              <audio ref={audioRef} src="src/assets/instrument.mp3" loop autoPlay/>
+              <audio ref={audioRef} src="/instrument.mp3" loop autoPlay/>
             </div>
           </div>
         </div>

@@ -1,0 +1,23 @@
+.hero{
+    h1{
+        font-family: Arial, Helvetica, sans-serif;
+        /* font-size: 40px; */
+        font-weight: 800;
+    }
+}
+.gradient-text {
+    background-image: linear-gradient(90deg, #00c2ff .08%, #93f9ff 33%, #fcf9f8 61.67%, #ce7bff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: all 0.3s ease;
+  }
+
+  .gradient-text2 {
+    background-image: linear-gradient(90deg, #00c2ff .08%, #93f9ff 33%, #fcf9f8 61.67%, #c15cfc);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: all 0.3s ease;
+  }
+  

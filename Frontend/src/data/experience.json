@@ -1,6 +1,6 @@
 [
     {
-      "company-logo": "/src/assets/videoit.webp",
+      "company-logo": "/videoit.webp",
       "company-name": "VideoIt",
       "company-title": "Full Stack Developer Intern",
       "exp-duration": "April 2025 - Current",
@@ -8,7 +8,7 @@
       "exp-handles": "Worked on authentication, API integration, and frontend optimization."
     },
     {
-      "company-logo": "/src/assets/libre.jpg",
+      "company-logo": "/libre.jpg",
       "company-name": "LibreOffice",
       "company-title": "C++ Opensource Contributor",
       "exp-duration": "Oct 2024 - Current",
@@ -16,7 +16,7 @@
       "exp-handles": "Implemented caching, CI/CD pipelines, and API security measures."
     },
     {
-      "company-logo": "/src/assets/apnacollege.jpeg",
+      "company-logo": "/apnacollege.jpeg",
       "company-name": "Apna College",
       "company-title": "MERN Teaching Assistant Intern",
       "exp-duration": "July 2024 - November 2024",
@@ -24,7 +24,7 @@
       "exp-handles": "Monitored infrastructure and optimized system performance."
     },
     {
-      "company-logo": "/src/assets/baelux.jpeg",
+      "company-logo": "/baelux.jpeg",
       "company-name": "Baleux",
       "company-title": "Software Development Engineer Intern",
       "exp-duration": "June 2024 - August 2024",

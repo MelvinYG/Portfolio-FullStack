@@ -2,6 +2,11 @@ import { useEffect } from "react";
 import gsap from "gsap";
 import String from "../string/string";
 
+import './hero.css';
+import { ScrollToPlugin } from "gsap/all";
+import { Timer10 } from "@mui/icons-material";
+
+gsap.registerPlugin(ScrollToPlugin)
 
 const Hero = () => {
   useEffect(() => {
@@ -15,29 +20,47 @@ const Hero = () => {
     var h1SClutter = "";
 
     h1FText.split('').forEach((elem) => {
-      h1FClutter += `<span>${elem}</span>`;
+      h1FClutter += `<span class='${elem}-class'>${elem === " " ? "&nbsp;" : elem}</span>`;
     });
     h1SText.split('').forEach((elem) => {
-      h1SClutter += `<span>${elem}</span>`;
-    });
+      h1SClutter += `<span>${elem === " " ? "&nbsp;" : elem}</span>`;
+    });    
 
     h1First.innerHTML = h1FClutter;
     h1Second.innerHTML = h1SClutter;
+    const oClass = document.querySelector('.o-class');
 
     const tl = gsap.timeline();
+
     tl.from('.h1First>span', {
       y: -10,
       opacity: 0,
       delay: 0.5,
       duration: 0.7,
-      stagger: 0.2
+      stagger: 0.1
     });
-    tl.from('.h1Second>span',{
+
+    tl.from('.h1Second>span', {
       y: -10,
       opacity: 0,
       duration: 0.7,
-      stagger: 0.2
-    })
+      stagger: 0.1
+    });
+
+    // Add color change AFTER all letter animations
+    tl.to('.h1First', {
+      onStart: () => {
+        h1First.classList.add('gradient-text');
+      },
+      duration: 0.1
+    }, "+=0.2");
+
+    tl.to('.h1Second', {
+      onStart: () => {
+        h1Second.classList.add('gradient-text2');
+      },
+      duration: 0.1
+    }, "+=1");
   }, []);
 
   return (

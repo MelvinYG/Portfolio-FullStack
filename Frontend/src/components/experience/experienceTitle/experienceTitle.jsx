@@ -9,7 +9,6 @@ const ExperienceTitle = () => {
     useGSAP(() => {
         let titleWidth = document.querySelector('.exp-title h1').scrollWidth;
         titleWidth = Math.min(0.9*titleWidth, 2000);
-        console.log(titleWidth);
         let transX = -1*titleWidth;
         gsap.to('.exp-title h1', {
             x: transX,

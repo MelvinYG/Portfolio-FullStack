@@ -1,7 +1,27 @@
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import { useRef } from "react";
+
 const About = () => {
+  const aboutTitleRef = useRef(null);
+
+  useGSAP(() => {
+    gsap.from(aboutTitleRef.current, {
+      x:100,
+      opacity: 0, 
+      duration: 1,
+      ease: "power3.out",
+      scrollTrigger:{
+        trigger: aboutTitleRef.current,
+        start: "top 80%",
+        toggleActions: "play none none none",
+      }
+    });
+  },[]);
+  
   return (
-    <div className="bg-[#111] w-full h-screen border-b border-[#eee] flex flex-col items-center gap-4">
-      <h1 className="uppercase text-center md:text-[calc(10vh)] text-[calc(5vh)]">About</h1>
+    <div className="about bg-[#111] w-full h-screen flex flex-col items-center gap-4">
+      <h1 ref={aboutTitleRef} className="uppercase text-center md:text-[calc(10vh)] text-[calc(5vh)]">ABOUT</h1>
 
       <div className="about-card flex md:flex-row flex-col justify-center w-[calc(70vw)] md:h-[calc(50vh)] h-[calc(90vh)] border border-[#eeeeee50] rounded-lg">
         <div className="about-details px-6 py-4 order-2 md:order-1 flex flex-col items-center md:w-[70%]">
@@ -16,7 +36,7 @@ const About = () => {
         </div>
         <div className="profile-pic  lg:w-1/2 md:w-full w-[100%] order-1 md:order-2 flex items-center justify-center">
           <div className="lg:w-[60%] w-[70%]">
-            <img src="src/assets/image.png" alt="" className="h-full w-full object-cover " />
+            <img src="/image.png" alt="" className="h-full w-full object-cover " />
           </div>
         </div>
       </div>
