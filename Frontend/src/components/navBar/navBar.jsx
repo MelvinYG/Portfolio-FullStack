@@ -57,14 +57,27 @@ const NavBar = () => {
     });
   }, []);
 
+  const handleClick = (e, targetId) => {
+  e.preventDefault();
+  const section = document.getElementById(targetId);
+
+  if (section) {
+    section.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+  }
+};
+
+
   return (
     <div className="h-[100px] navBar">
       <div ref={navRef} className="flex items-center justify-between px-[10vw] py-10">
         <div className="logo font-bold text-xl">Melvin&apos;s Portfolio</div>
         <div className="menu flex justify-center items-center gap-4">
-          <div className="about">About</div>
-          <div className="project">Projects</div>
-          <div className="contact">Contact Me</div>
+          <div className="about" onClick={(e) => handleClick(e, "about")}>About</div>
+          <div className="project" onClick={(e) => handleClick(e,"project")} >Projects</div>
+          <div className="contact" onClick={(e) => handleClick(e, "footer")}>Contact Me</div>
           <div className="musicBtns" onClick={handleMusic}>
               {musicOff ? <MusicOffIcon /> : <MusicNoteIcon />}
             </div>
@@ -74,9 +87,9 @@ const NavBar = () => {
 
           <div ref={sideMenuRef} className="side-menu">
             <CloseIcon onClick={handleSideMenu} className="close-icon" />
-            <div className="about">About</div>
-            <div className="project">Projects</div>
-            <div className="contact">Contact Me</div>
+            <div className="about" onClick={(e) => handleClick(e, "about")}>About</div>
+            <div className="project" onClick={(e) => handleClick(e, "project")}>Projects</div>
+            <div className="contact" onClick={(e) => handleClick(e, "footer")}>Contact Me</div>
             <div className="musicBtns" onClick={handleMusic}>
               {musicOff ? <MusicOffIcon /> : <MusicNoteIcon />}
               <audio ref={audioRef} src="/instrument.mp3" loop autoPlay/>
