@@ -7,17 +7,54 @@
 }
 .gradient-text {
     background-image: linear-gradient(90deg, #00c2ff .08%, #93f9ff 33%, #fcf9f8 61.67%, #ce7bff);
+    /* background-image: linear-gradient(to bottom right , #d96720 , #fff); */
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
-    transition: all 0.3s ease;
+    transition: all 0.6s ease;
   }
 
   .gradient-text2 {
     background-image: linear-gradient(90deg, #00c2ff .08%, #93f9ff 33%, #fcf9f8 61.67%, #c15cfc);
+    /* background-image: linear-gradient(to bottom right , #d96720 , #fff); */
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
-    transition: all 0.3s ease;
+    transition: all 0.6s ease;
   }
   
+.hero-zoom-out-1 {
+  transform: translate(100vw);
+  transition: all 2s ease-out;
+}
+
+.hero-zoom-out-2 {
+  transform: translate(-100vw);
+  transition: all 2s ease-out;
+}
+
+/* .signature-svg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+} */
+
+
+.signature-svg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.9);
+  opacity: 0;
+  width: 320px;
+  pointer-events: none;
+}
+
+.signature-visible {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+}
+
