@@ -1,47 +1,81 @@
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { useRef } from "react";
+import "./about.css";
+import AboutText from "./aboutText";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const About = () => {
   const aboutTitleRef = useRef(null);
+  const waveRef = useRef(null);
+  
+  const waveTl = useRef(null);
 
   useGSAP(() => {
+    // 1. Title Animation
     gsap.from(aboutTitleRef.current, {
-      x:100,
-      opacity: 0, 
+      x: 100,
+      opacity: 0,
       duration: 1,
       ease: "power3.out",
-      scrollTrigger:{
+      scrollTrigger: {
         trigger: aboutTitleRef.current,
         start: "top 80%",
         toggleActions: "play none none none",
-      }
+      },
     });
-  },[]);
-  
-  return (
-    <div className="about bg-[#111] w-full h-screen flex flex-col items-center gap-4">
-      <h1 ref={aboutTitleRef} className="uppercase text-center md:text-[calc(10vh)] text-[calc(5vh)]">ABOUT</h1>
 
-      <div className="about-card flex md:flex-row flex-col justify-center w-[calc(70vw)] md:h-[calc(50vh)] h-[calc(90vh)] border border-[#eeeeee50] rounded-lg">
-        <div className="about-details px-6 py-4 order-2 md:order-1 flex flex-col items-center md:w-[70%]">
-          <h2 className="text-[28px] mt-4">👋 Hey I&apos;m Melvin</h2>
-          <p className="text-center mt-8">
-          I'm a final year student of Indian Institute of Technology Patna, IIT Patna and based out from Kerala, India. I'm a passionate full-stack developer with a love for building seamless digital experiences. 
-            <br />
-          🚀 With experience in WasmEdge, LibreOffice, Shopify apps, and energy management systems, I enjoy solving complex problems and pushing the boundaries of technology.
-            <br />
-          💡 Always learning, always innovating—let's build something amazing together!
-        </p>
+    // 2. Wave Animation Setup
+    gsap.set(waveRef.current, { transformOrigin: "70% 70%" });
+    
+    // Create the timeline and assign it to the ref
+    waveTl.current = gsap.timeline({ paused: true, repeat: -1 })
+      .to(waveRef.current, { rotate: 18, duration: 0.15 })
+      .to(waveRef.current, { rotate: -14, duration: 0.15 })
+      .to(waveRef.current, { rotate: 12, duration: 0.15 })
+      .to(waveRef.current, { rotate: 0, duration: 0.2 });
+      
+  }, []); // Scope is optional here since we use refs directly
+
+  // Event Handlers
+  const handleMouseEnter = () => {
+    waveTl.current?.restart();
+  };
+
+  const handleMouseLeave = () => {
+    waveTl.current?.pause(0); // Pause and reset to 0 progress
+  };
+
+  return (
+    <div id="about" className="about bg-[#111] w-full min-h-screen flex flex-col items-center gap-4">
+      <h1 ref={aboutTitleRef} className="uppercase text-center md:text-[calc(10vh)] text-[calc(5vh)]">
+        ABOUT
+      </h1>
+
+      <div className="flex flex-col items-center gap-5">
+        <div className="image-container">
+          <img src="/hi-myself.png" alt="" />
         </div>
-        <div className="profile-pic  lg:w-1/2 md:w-full w-[100%] order-1 md:order-2 flex items-center justify-center">
-          <div className="lg:w-[60%] w-[70%]">
-            <img src="/image.png" alt="" className="h-full w-full object-cover " />
+        <div className="hi-wrapper">
+          <svg className="border-svg" viewBox="0 0 100 40" preserveAspectRatio="none">
+            <rect x="1" y="1" width="98" height="38" rx="10" ry="10" />
+          </svg>
+
+          <div 
+            className="hi-container" 
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
+          >
+            Hi! I'm Melvin 
+            <span ref={waveRef} className="inline-block">👋</span>
           </div>
         </div>
+        <AboutText />
       </div>
     </div>
-  )
+  );
 };
 
 export default About;
