@@ -1,0 +1,95 @@
+.project-section {
+  padding: 4rem 0 0 0;
+  text-align: center;
+}
+
+.project-header {
+  font-size: clamp(3rem, 10vw, 8rem);
+  font-weight: 800;
+  text-transform: uppercase;
+  transform-origin: center center;
+  will-change: transform;
+}
+
+.spacer {
+  height: 100vh;
+}
+
+.project-data .elem {
+    height: 10vh;
+    text-align: start;
+    padding: 4rem;
+    font-size: 2rem;
+    border-bottom: 1px solid #fff;
+    display: flex;
+    align-items: center;
+    position: relative;
+    transition: all ease 0.5s;
+    overflow: hidden;
+    z-index: 880;
+}
+
+.elem h2 {
+    position: relative;
+    z-index: 888;
+}
+
+.elem .overlay {
+    background: #d96720;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: -100%;
+    left: 0;
+}
+
+.elem:hover .overlay {
+    top:0;
+}
+
+.elem:hover h2 {
+    color: black !important;
+}
+
+.loop-container {
+  overflow: hidden;
+  width: 100%;
+  padding: 2.5rem 0;
+}
+
+.loop-text {
+  white-space: nowrap;
+  font-size: 5rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.25);
+  will-change: transform;
+}
+
+.loop-track {
+  display: flex;
+  width: max-content;
+  will-change: transform;
+}
+
+.loop-item {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding-right: 1.5rem;
+  white-space: nowrap;
+  font-size: 5rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.25);
+}
+
+.loop-arrow {
+  width: 2.5rem;
+  height: 2.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  transform-origin: center;
+  opacity: 0.35;
+  filter: invert(0.9);
+}
