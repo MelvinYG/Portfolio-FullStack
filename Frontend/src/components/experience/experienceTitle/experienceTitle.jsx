@@ -1,6 +1,7 @@
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import './experienceTitle.css';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -23,7 +24,7 @@ const ExperienceTitle = () => {
     });
 
     return (
-        <div className="exp-title uppercase h-[calc(70vh)] bg-blue-300">
+        <div className="exp-title uppercase h-[calc(70vh)]">
             <h1 className="text-[calc(50vh)] px-20">Experience</h1>
         </div>
     );

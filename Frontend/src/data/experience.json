@@ -1,9 +1,17 @@
 [
     {
+      "company-logo": "/juspay.png",
+      "company-name": "Juspay",
+      "company-title": "Product Engineer-I",
+      "exp-duration": "July 2025 - Current",
+      "exp-bulletin": "Worked with Recon & Settlement team, to integrate multiple banks to the ecosystem, namley, HSBC, Axis, YesBank. Added the support for multiple instruction file generation and response handling of the same.",
+      "exp-handles": "Experience working with Rust, PostgreSQL, Kubernetes, GCP, AWS."
+    },
+    {
       "company-logo": "/videoit.webp",
       "company-name": "VideoIt",
       "company-title": "Full Stack Developer Intern",
-      "exp-duration": "April 2025 - Current",
+      "exp-duration": "April 2025 - May 2025",
       "exp-bulletin": "Developed and maintained web applications with React and Node.js.",
       "exp-handles": "Worked on authentication, API integration, and frontend optimization."
     },
